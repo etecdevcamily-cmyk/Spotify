@@ -1,15 +1,14 @@
-function abrirEnvelope() {
-  const envelope = document.getElementById("Envelope");
-  const botao = document.querySelector("button");
+const envelope = document.getElementById("envelope");
+const botaoAbrir = document.getElementById("botaoAbrir");
+const botaoContinuar = document.getElementById("botaoContinuar");
 
-  envelope.classList.toggle("aberto");
+botaoAbrir.addEventListener("click", () => {
+  const estaAberto = envelope.classList.toggle("aberto");
 
-  if (envelope.classList.contains("aberto")) {
-    botao.textContent = "Fechar carta💌";
-  } else {
-    botao.textContent = "Abrir carta💌";
-  }
-}
+  botaoAbrir.textContent = estaAberto
+    ? "Fechar carta 💌"
+    : "Abrir carta 💌";
 
-// Também permite clicar diretamente no envelope para abrir/fechar
-document.getElementById("Envelope").addEventListener("click", abrirEnvelope);
+  botaoAbrir.setAttribute("aria-expanded", String(estaAberto));
+  botaoContinuar.setAttribute("tabindex", estaAberto ? "0" : "-1");
+});
