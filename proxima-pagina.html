@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caso Indefinido 🎵</title>
+  <link rel="stylesheet" href="proxima-pagina.css">
+</head>
+<body>
+
+  <main class="wrapper">
+    <div class="cards-container">
+      
+      <!-- Card Player Spotify -->
+      <section class="card spotify-card" aria-label="Player de música">
+        <div class="spotify-header">
+          <svg class="spotify-logo" viewBox="0 0 24 24" width="22" height="22" fill="#1DB954">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.48.66.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+          </svg>
+          <span class="tocando-agora">Tocando para você</span>
+        </div>
+
+        <div class="capa-container">
+          <img 
+            src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=600&q=80" 
+            alt="Capa romântica" 
+            class="capa-album"
+          >
+          <div class="efeito-disco"></div>
+        </div>
+
+        <div class="musica-info">
+          <div class="dados-texto">
+            <h2 class="titulo-musica">Caso Indefinido</h2>
+            <p class="artista">Cristiano Araújo</p>
+          </div>
+          <button class="btn-favorito" id="btnFavorito" aria-label="Favoritar">
+            ♥
+          </button>
+        </div>
+
+        <!-- Barra de reprodução -->
+        <div class="player-progresso">
+          <div class="barra-fundo" id="barraProgresso">
+            <div class="barra-preenchimento" id="progresso"></div>
+          </div>
+          <div class="tempo">
+            <span id="tempoAtual">0:48</span>
+            <span id="tempoTotal">3:34</span>
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="player-controles">
+          <button class="btn-controle" aria-label="Anterior">⏮</button>
+          <button class="btn-play" id="btnPlay" aria-label="Tocar/Pausar">▶</button>
+          <button class="btn-controle" aria-label="Próxima">⏭</button>
+        </div>
+
+        <p class="legenda-trecho">“Sabe, já faz tempo que eu queria te dizer...”</p>
+      </section>
+
+      <!-- Card da Declaração -->
+      <section class="card pedido-card">
+        <div class="selo-amor">💌 Para você</div>
+
+        <h1 class="titulo-pergunta">
+          Aceita ser o meu <span class="destaque">caso indefinido</span>?
+        </h1>
+
+        <p class="texto-mensagem">
+          Não importa se a gente não tem rótulo ou se o mundo não entende. 
+          O que importa é que cada segundo com você vale a pena. 
+          E aí, topa escrever essa história comigo?
+        </p>
+
+        <div class="botoes-resposta">
+          <button class="btn-sim" id="btnSim">Sim, eu quero! 💖</button>
+          <button class="btn-nao" id="btnNao">Não</button>
+        </div>
+
+        <div class="resposta-final" id="respostaFinal" aria-live="polite"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Elemento de áudio opcional (adicione o link do seu mp3 se tiver) -->
+  <audio id="audioMusica" preload="none"></audio>
+
+  <script src="proxima-pagina.js"></script>
+</body>
+</html>
