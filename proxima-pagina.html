@@ -8,6 +8,9 @@
 </head>
 <body>
 
+  <!-- Áudio real da música (coloque musica.mp3 na mesma pasta) -->
+  <audio id="audioMusica" src="musica.mp3" preload="metadata"></audio>
+
   <main class="wrapper">
     <div class="cards-container">
       
@@ -21,12 +24,14 @@
         </div>
 
         <div class="capa-container">
+          <!-- Tenta foto.jpg local; se não encontrar, usa a imagem online -->
           <img 
-            src="https://www.facebook.com/memesdanguimbi/posts/a-dor-de-encontrar-o-amor-da-tua-vida-s%C3%B3-depois-de-entrar-numa-rela%C3%A7%C3%A3o/1490033672497151/" 
-            alt="Capa romântica" 
+            id="capaImg"
+            src="foto.jpg" 
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=600&q=80';"
+            alt="Capa de Caso Indefinido" 
             class="capa-album"
           >
-          <div class="efeito-disco"></div>
         </div>
 
         <div class="musica-info">
@@ -34,9 +39,7 @@
             <h2 class="titulo-musica">Caso Indefinido</h2>
             <p class="artista">Cristiano Araújo</p>
           </div>
-          <button class="btn-favorito" id="btnFavorito" aria-label="Favoritar">
-            ♥
-          </button>
+          <button class="btn-favorito" id="btnFavorito" aria-label="Favoritar">♥</button>
         </div>
 
         <!-- Barra de reprodução -->
@@ -45,19 +48,20 @@
             <div class="barra-preenchimento" id="progresso"></div>
           </div>
           <div class="tempo">
-            <span id="tempoAtual">0:48</span>
-            <span id="tempoTotal">3:34</span>
+            <span id="tempoAtual">0:00</span>
+            <span id="tempoTotal">0:00</span>
           </div>
         </div>
 
         <!-- Controles -->
         <div class="player-controles">
-          <button class="btn-controle" aria-label="Anterior">⏮</button>
+          <button class="btn-controle" id="btnVoltar10" title="Voltar 10s">⏪</button>
           <button class="btn-play" id="btnPlay" aria-label="Tocar/Pausar">▶</button>
-          <button class="btn-controle" aria-label="Próxima">⏭</button>
+          <button class="btn-controle" id="btnAvancar10" title="Avançar 10s">⏩</button>
         </div>
 
         <p class="legenda-trecho">“Sabe, já faz tempo que eu queria te dizer...”</p>
+        <p class="aviso-audio" id="avisoAudio"></p>
       </section>
 
       <!-- Card da Declaração -->
@@ -84,9 +88,6 @@
 
     </div>
   </main>
-
-  <!-- Elemento de áudio opcional (adicione o link do seu mp3 se tiver) -->
-  <audio id="audioMusica" preload="none"></audio>
 
   <script src="proxima-pagina.js"></script>
 </body>
